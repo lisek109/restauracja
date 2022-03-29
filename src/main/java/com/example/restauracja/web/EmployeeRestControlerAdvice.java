@@ -12,7 +12,12 @@ public class EmployeeRestControlerAdvice {
     }
 
     @ExceptionHandler(IndexOutOfBoundsException.class)
-    public String indexExeption(IndexOutOfBoundsException ie) {
+    public String indexException(IndexOutOfBoundsException ie) {
         return "Index out of bounds exeption" + ie.getMessage();
+    }
+
+    @ExceptionHandler(NullPointerException.class)
+    public String nullPointerException(NullPointerException e) {
+        return "You've got null!" + e.getMessage();
     }
 }
