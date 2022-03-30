@@ -12,15 +12,14 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Dish {
+public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
-    private Integer price;
-    private Integer points;
 
+    private Integer value;
 
-    //private List<Order> ordersList;
+    @OneToMany
+    private List<Dish> dishList;
 }
