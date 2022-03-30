@@ -22,11 +22,12 @@ public class EmployeeService {
     }
 
     public Employee findById(Long id) {
-        return employeeRepo.findById(id);
+        return employeeRepo.findById(id).orElseThrow(RuntimeException::new);
     }
 
     public boolean deleteById(Long id) {
-        return employeeRepo.deleteById(id);
+        employeeRepo.delete(findById(id));
+        return true;
     }
 }
 
