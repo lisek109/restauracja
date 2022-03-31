@@ -14,8 +14,8 @@ public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String fName;
-    private String lName;
+    private String firstName;
+    private String lastName;
 
     @Column(unique = true)
     private String email;
