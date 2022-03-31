@@ -3,6 +3,8 @@ package com.example.restauracja.web;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.validator.constraints.Length;
+
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 
@@ -19,7 +21,8 @@ public class Client {
     private String lastName;
 
     @Column(unique = true)
-    @Email(message = "invalid email format")
+    @Email
+    @Length
     private String email;
 
     @OneToOne

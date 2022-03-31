@@ -2,6 +2,7 @@ package com.example.restauracja.web;
 
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -19,12 +20,13 @@ public class Employee {
     private String name;
     private Integer salary;
     private String position;
+    private Boolean isFree = true;
 
     @Column(unique = true)
     private String email;
 
     @OneToOne
-    Client client;
+    private Client client;
 }
 
 //{

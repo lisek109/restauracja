@@ -11,7 +11,7 @@ import java.util.List;
 //public class EmployeeRepo {
 public interface EmployeeRepo extends JpaRepository<Employee, Long> {
 
-
+    List<Employee> findAllByIsFree(Boolean isFree) ;
 
   //  private List<Employee> employeeList = new ArrayList<>();
   //  private Long idSequence = 1L;

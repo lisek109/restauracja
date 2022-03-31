@@ -1,11 +1,13 @@
 package com.example.restauracja.service;
 
 import com.example.restauracja.repository.EmployeeRepo;
+import com.example.restauracja.web.Client;
 import com.example.restauracja.web.Employee;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -29,5 +31,13 @@ public class EmployeeService {
         employeeRepo.delete(findById(id));
         return true;
     }
+
+    public List<Employee> findAllByIsFree(Boolean isFree) {
+       return employeeRepo.findAll().stream()
+               .filter(i -> i.getIsFree() == isFree)
+               .collect(Collectors.toList());
+    }
+
+
 }
 
