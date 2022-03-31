@@ -20,5 +20,6 @@ public class Client {
     @Column(unique = true)
     private String email;
 
-
+    @OneToOne
+    Order order;
 }

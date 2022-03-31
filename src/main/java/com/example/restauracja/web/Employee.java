@@ -23,8 +23,8 @@ public class Employee {
     @Column(unique = true)
     private String email;
 
-
-    private Client client;
+    @OneToOne
+    Client client;
 }
 
 //{

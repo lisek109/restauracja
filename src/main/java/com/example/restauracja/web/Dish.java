@@ -21,6 +21,9 @@ public class Dish {
     private Integer price;
     private Integer points;
 
-
-    //private List<Order> ordersList;
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "orders_dishes",
+    joinColumns = {@JoinColumn(name = "order_id")},
+    inverseJoinColumns = {@JoinColumn(name = "dish_id")})
+    private List<Order> ordersList;
 }

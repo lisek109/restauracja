@@ -12,14 +12,16 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(name = "\"order\"")
 public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Long id;
 
     private Integer value;
 
-    @OneToMany
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "ordersList")
     private List<Dish> dishList;
 }
