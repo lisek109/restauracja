@@ -16,6 +16,7 @@ public class Dish {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "dish_id")
     private Long id;
     private String name;
     private Integer price;
@@ -30,6 +31,6 @@ public class Dish {
     inverseJoinColumns = {@JoinColumn(name = "dish_id")})
     private List<Order> ordersList;
 
-    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "ingredients_dishes")
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "dishes")
     private List<Ingredient> ingredients;
 }
