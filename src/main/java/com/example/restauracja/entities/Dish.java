@@ -21,9 +21,15 @@ public class Dish {
     private Integer price;
     private Integer points;
 
+    @Enumerated(EnumType.STRING)
+    private DishTYpe dishTYpe;
+
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "orders_dishes",
     joinColumns = {@JoinColumn(name = "order_id")},
     inverseJoinColumns = {@JoinColumn(name = "dish_id")})
     private List<Order> ordersList;
+
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "ingredients_dishes")
+    private List<Ingredient> ingredients;
 }
