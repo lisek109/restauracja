@@ -1,7 +1,7 @@
 package com.example.restauracja.service;
 
 import com.example.restauracja.repository.ClientRepo;
-import com.example.restauracja.web.Client;
+import com.example.restauracja.entities.Client;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

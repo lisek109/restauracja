@@ -1,7 +1,7 @@
 package com.example.restauracja.service;
 
 import com.example.restauracja.repository.DishRepo;
-import com.example.restauracja.web.Dish;
+import com.example.restauracja.entities.Dish;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

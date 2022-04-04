@@ -1,6 +1,7 @@
 package com.example.restauracja.web;
 
 
+import com.example.restauracja.entities.Client;
 import com.example.restauracja.service.ClientService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -11,7 +12,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/restaurant/client")
-public class ClientControler {
+public class ClientController {
 
     private final ClientService clientService;
 

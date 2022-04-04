@@ -1,4 +1,4 @@
-package com.example.restauracja.web;
+package com.example.restauracja.entities;
 
 
 import lombok.AllArgsConstructor;

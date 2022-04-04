@@ -1,6 +1,6 @@
 package com.example.restauracja.repository;
 
-import com.example.restauracja.web.Employee;
+import com.example.restauracja.entities.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

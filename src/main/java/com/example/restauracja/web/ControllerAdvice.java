@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @RestControllerAdvice
-public class EmployeeRestControlerAdvice {
+public class ControllerAdvice {
 
     @ExceptionHandler(Exception.class)
     public String handleException(Exception e) {

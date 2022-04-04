@@ -2,7 +2,7 @@ package com.example.restauracja.service;
 
 
 import com.example.restauracja.repository.OrderRepo;
-import com.example.restauracja.web.Order;
+import com.example.restauracja.entities.Order;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
