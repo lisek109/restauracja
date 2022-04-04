@@ -4,14 +4,15 @@ import com.example.restauracja.entities.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 //@Repository
 //public class EmployeeRepo {
 public interface EmployeeRepo extends JpaRepository<Employee, Long> {
 
-    List<Employee> findAllByIsFree(Boolean isFree); // SELECT * FROM employee WHERE isFree = ?
+    List<Employee> findAllByIsFree(Boolean isFree);// SELECT * FROM employee WHERE isFree = ?
 
-
+    Optional<Employee> findByIsFree(Boolean isFree);
 
   //  private List<Employee> employeeList = new ArrayList<>();
   //  private Long idSequence = 1L;

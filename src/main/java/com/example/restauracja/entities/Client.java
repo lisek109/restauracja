@@ -26,8 +26,8 @@ public class Client {
     private String email;
 
     @OneToOne
-    Order order;
+    private Order order;
 
     @OneToOne
-    Employee employee;
+    private Employee employee;
 }

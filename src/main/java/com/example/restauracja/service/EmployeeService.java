@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -32,10 +33,13 @@ public class EmployeeService {
     }
 
     public List<Employee> findAllByIsFree(Boolean isFree) {
-       return employeeRepo.findAll().stream()
-               .filter(i -> i.getIsFree() == isFree)
-               .collect(Collectors.toList());
+       return employeeRepo.findAllByIsFree(isFree);
     }
+
+    public Optional<Employee> findByIsFree(Boolean isFree) {
+        return employeeRepo.findByIsFree(isFree);
+    }
+
 
 
 }
