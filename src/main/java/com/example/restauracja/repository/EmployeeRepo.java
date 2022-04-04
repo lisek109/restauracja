@@ -11,6 +11,8 @@ public interface EmployeeRepo extends JpaRepository<Employee, Long> {
 
     List<Employee> findAllByIsFree(Boolean isFree); // SELECT * FROM employee WHERE isFree = ?
 
+
+
   //  private List<Employee> employeeList = new ArrayList<>();
   //  private Long idSequence = 1L;
 //

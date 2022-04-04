@@ -1,11 +1,13 @@
 package com.example.restauracja.service;
 
+import com.example.restauracja.entities.Employee;
 import com.example.restauracja.repository.ClientRepo;
 import com.example.restauracja.entities.Client;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -30,4 +32,6 @@ public class ClientService {
         clientRepo.delete(findById(id));
         return true;
     }
+
+
 }

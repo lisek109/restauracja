@@ -26,6 +26,7 @@ public class ClientController {
         return clientService.findAll();
     }
 
+
     @PostMapping
     public ResponseEntity<Client> save(@RequestBody final Client client) {
         return ResponseEntity.ok(clientService.save(client));

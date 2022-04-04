@@ -15,7 +15,7 @@ public class Ingredient {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ing_id")
+    @Column(name = "id")
     private Long id;
     private String name;
     private Integer calories;
@@ -25,8 +25,8 @@ public class Ingredient {
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "ingredients_dishes",
-    joinColumns = {@JoinColumn(name = "dish_id")},
-    inverseJoinColumns = {@JoinColumn(name = "ing_id")})
+    joinColumns = {@JoinColumn(name = "ingredient_id")},
+    inverseJoinColumns = {@JoinColumn(name = "dish_id")})
     private List<Dish> dishes;
 
 }

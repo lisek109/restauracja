@@ -16,7 +16,7 @@ public class Dish {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "dish_id")
+    @Column(name = "id")
     private Long id;
     private String name;
     private Integer price;
