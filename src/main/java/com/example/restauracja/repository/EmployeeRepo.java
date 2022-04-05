@@ -10,9 +10,7 @@ import java.util.Optional;
 //public class EmployeeRepo {
 public interface EmployeeRepo extends JpaRepository<Employee, Long> {
 
-    List<Employee> findAllByIsFree(Boolean isFree);// SELECT * FROM employee WHERE isFree = ?
-
-    Optional<Employee> findFirstByIsFree(Boolean isFree);
+    Optional<Employee> findFirstByPositionOrPositionAndClientNumberLessThanOrderByClientNumberAsc(String pos1, String pos2, Integer clientNumber);
 
   //  private List<Employee> employeeList = new ArrayList<>();
   //  private Long idSequence = 1L;

@@ -31,19 +31,10 @@ public class EmployeeService {
         return true;
     }
 
-    public List<Employee> findAllByIsFree(Boolean isFree) {
-        return employeeRepo.findAllByIsFree(isFree);
-    }
-
-    public Employee findByIsFree(Boolean isFree) {
-        Employee employee = employeeRepo.findFirstByIsFree(isFree).orElse(null);
-        if (employee != null) {
-            if (employee.getPosition().equals(Position.WAITER) || employee.getPosition().equals(Position.BARTENDER) &&
-                    employee.getClients().size() < 3) {
-                return employee;
-            }
-        }
-        return null;
+    public Employee findEmployee() {
+        return employeeRepo.findFirstByPositionOrPositionAndClientNumberLessThanOrderByClientNumberAsc(
+                Position.BARTENDER.toString(), Position.WAITER.toString(), 3)
+                .orElseThrow(() -> new RuntimeException("There is no free employee right now"));
     }
 
 

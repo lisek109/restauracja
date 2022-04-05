@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.Valid;
+import javax.validation.constraints.Email;
 import java.util.List;
 
 @Data
@@ -24,6 +26,7 @@ public class Employee {
     private Short clientNumber;
 
     @Column(unique = true)
+    @Email(message = "email format is not correct")
     private String email;
 
     @OneToMany

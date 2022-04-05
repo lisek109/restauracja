@@ -34,7 +34,7 @@ public class ClientController {
     }
 
     @PostMapping("/{id}")
-    public ResponseEntity<Boolean> saveRandomEmployee(@PathVariable final Long id) {
+    public ResponseEntity<Client> saveRandomEmployee(@PathVariable final Long id) {
         return ResponseEntity.ok(clientService.saveRandomEmployee(id));
     }
 
@@ -44,7 +44,7 @@ public class ClientController {
     }
 
     @PostMapping("/{id}")
-    public ResponseEntity<Boolean> saveEmployee(@PathVariable final Long id, @RequestBody Employee employee) {
+    public ResponseEntity<Client> saveEmployee(@PathVariable final Long id, @RequestBody Employee employee) {
         return ResponseEntity.ok(clientService.saveEmployee(id,employee));
     }
 }
