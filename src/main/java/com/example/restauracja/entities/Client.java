@@ -29,6 +29,6 @@ public class Client {
     private Order order;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "empl_id", referencedColumnName = "employee_id")
+    @JoinColumn(name = "empl_id", referencedColumnName = "id")
     private Employee employee;
 }
