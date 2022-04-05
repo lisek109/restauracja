@@ -32,9 +32,13 @@ public class ClientController {
         return ResponseEntity.ok(clientService.save(client));
     }
 
+    @PostMapping("/{id}")
+    public ResponseEntity<Boolean> saveEmployee(@PathVariable final Long id) {
+        return ResponseEntity.ok(clientService.saveEmployee(id));
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Boolean> delete(@PathVariable final Long id) {
         return ResponseEntity.ok(clientService.deleteById(id));
     }
-
 }
