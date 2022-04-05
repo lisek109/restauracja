@@ -29,7 +29,7 @@ public class Employee {
     @Email(message = "email format is not correct")
     private String email;
 
-    @OneToMany
+    @OneToMany(mappedBy = "employee")
     List<Client> clients;
 
 }

@@ -37,6 +37,7 @@ public class ClientService {
         Client client = clientRepo.getById(id);
         Employee employee = employeeService.findEmployee();
         client.setEmployee(employee);
+        employee.setClientNumber((short) (employee.getClientNumber() + 1));
         return clientRepo.save(client);
     }
 
