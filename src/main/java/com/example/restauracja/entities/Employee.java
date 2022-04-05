@@ -21,8 +21,8 @@ public class Employee {
     private Long id;
     private String name;
     private Integer salary;
+    @Enumerated(value = EnumType.STRING)
     private Position position;
-    private Boolean isFree = true;
     private Short clientNumber;
 
     @Column(unique = true)
