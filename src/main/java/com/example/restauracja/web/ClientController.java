@@ -2,6 +2,7 @@ package com.example.restauracja.web;
 
 
 import com.example.restauracja.entities.Client;
+import com.example.restauracja.entities.Employee;
 import com.example.restauracja.service.ClientService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -33,12 +34,17 @@ public class ClientController {
     }
 
     @PostMapping("/{id}")
-    public ResponseEntity<Boolean> saveEmployee(@PathVariable final Long id) {
-        return ResponseEntity.ok(clientService.saveEmployee(id));
+    public ResponseEntity<Boolean> saveRandomEmployee(@PathVariable final Long id) {
+        return ResponseEntity.ok(clientService.saveRandomEmployee(id));
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Boolean> delete(@PathVariable final Long id) {
         return ResponseEntity.ok(clientService.deleteById(id));
+    }
+
+    @PostMapping("/{id}")
+    public ResponseEntity<Boolean> saveEmployee(@PathVariable final Long id, @RequestBody Employee employee) {
+        return ResponseEntity.ok(clientService.saveEmployee(id,employee));
     }
 }

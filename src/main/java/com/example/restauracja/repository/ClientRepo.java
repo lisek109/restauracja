@@ -13,7 +13,7 @@ public interface ClientRepo extends JpaRepository<Client, Long> {
   // void saveEmployee(@Param("employee")Employee);
 
 
-    public void saveEmployee(Employee employee);
+    //public void saveEmployee(Employee employee);
 
 
 }

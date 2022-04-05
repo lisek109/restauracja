@@ -33,14 +33,23 @@ public class ClientService {
         return true;
     }
 
-    public Boolean saveEmployee(Long id) {
+    public Boolean saveRandomEmployee(Long id) {
         Client client = clientRepo.getById(id);
         Employee employee1 = employeeService.findByIsFree(true);
         if (employee1 != null) {
+            employee1.setIsFree(false);
             client.setEmployee(employee1);
+            clientRepo.save(client);
             return true;
         }
         return false;
+    }
+
+    public Boolean saveEmployee(Long clientID, Employee employee) {
+        Client client = clientRepo.getById(clientID);
+        client.setEmployee(employee);
+        clientRepo.save(client);
+        return true;
     }
 }
 

@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
@@ -18,17 +19,17 @@ public class Employee {
     private Long id;
     private String name;
     private Integer salary;
-    private String position;
+    private Position position;
     private Boolean isFree = true;
+    private Short clientNumber;
 
     @Column(unique = true)
     private String email;
 
-   // @OneToOne
-   // @JoinColumn(name = "client_id", referencedColumnName = "client_id")
-   // private Client client;
-}
+    @OneToMany
+    List<Client> clients;
 
+}
 //{
 //    "name" : "Tomasz",
 //    "salary" : 12000
