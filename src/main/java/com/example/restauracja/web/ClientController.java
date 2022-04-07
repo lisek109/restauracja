@@ -1,6 +1,5 @@
 package com.example.restauracja.web;
 
-
 import com.example.restauracja.entities.Client;
 import com.example.restauracja.entities.Employee;
 import com.example.restauracja.service.ClientService;
@@ -10,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/restaurant/client")

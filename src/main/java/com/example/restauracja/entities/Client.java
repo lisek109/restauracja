@@ -31,4 +31,5 @@ public class Client {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "empl_id", referencedColumnName = "id")
     private Employee employee;
+
 }
