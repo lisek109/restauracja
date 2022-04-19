@@ -29,8 +29,8 @@ public class Employee {
     @Email(message = "email format is not correct")
     private String email;
 
-    @OneToMany(mappedBy = "employee")
-    List<Client> clients;
+    //@OneToMany(mappedBy = "employee")
+    //private List<Client> clients;
 
 }
 //{
