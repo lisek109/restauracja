@@ -25,9 +25,12 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
                 .authorizeRequests().antMatchers("/restaurant/client/**").permitAll()
                 .antMatchers(HttpMethod.GET, "/restaurant/client/**").authenticated()
-
                 .antMatchers("/restaurant/employee/**")
-                .authenticated();
+                .authenticated()
+                .and()
+                .formLogin()
+                .and()
+                .logout();
     }
 
     @Override
