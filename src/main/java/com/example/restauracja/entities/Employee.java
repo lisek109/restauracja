@@ -1,6 +1,7 @@
 package com.example.restauracja.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -30,7 +31,8 @@ public class Employee {
     private String email;
 
     //@OneToMany(mappedBy = "employee")
-    //private List<Client> clients;
+   // @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+    private List<Client> clients;
 
 }
 //{

@@ -1,5 +1,6 @@
 package com.example.restauracja.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -30,6 +31,8 @@ public class Client {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "empl_id", referencedColumnName = "id")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+
     private Employee employee;
 
 }
