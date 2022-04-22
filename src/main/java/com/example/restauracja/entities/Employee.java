@@ -30,8 +30,7 @@ public class Employee {
     @Email(message = "email format is not correct")
     private String email;
 
-    //@OneToMany(mappedBy = "employee")
-   // @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+    @Transient
     private List<Client> clients;
 
 }
