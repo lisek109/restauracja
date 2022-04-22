@@ -2,7 +2,6 @@ package com.example.restauracja.service;
 
 import com.example.restauracja.entities.Client;
 import com.example.restauracja.entities.Employee;
-import com.example.restauracja.entities.Order;
 import com.example.restauracja.repository.ClientRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
