@@ -30,7 +30,7 @@ public class Client {
     @OneToOne
     private Order order;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "empl_id", referencedColumnName = "id")
     private Employee employee;
 
