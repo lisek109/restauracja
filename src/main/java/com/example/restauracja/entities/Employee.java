@@ -28,7 +28,7 @@ public class Employee {
     @Email(message = "email format is not correct")
     private String email;
 
-    @Transient
+    @OneToMany
     private List<Client> clients;
 
 }

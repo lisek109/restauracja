@@ -33,20 +33,20 @@ public class ClientController {
         return ResponseEntity.ok(clientService.save(client));
     }
 
-    @PostMapping("/{id}")
-    public ResponseEntity<Client> saveRandomEmployee(@PathVariable final Long id) {
-        return ResponseEntity.ok(clientService.saveRandomEmployee(id));
-    }
+   // @PostMapping("/{id}")
+   // public ResponseEntity<Client> saveRandomEmployee(@PathVariable final Long id) {
+   //     return ResponseEntity.ok(clientService.saveRandomEmployee(id));
+   // }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Boolean> delete(@PathVariable final Long id) {
         return ResponseEntity.ok(clientService.deleteById(id));
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<Client> saveEmployee(@PathVariable final Long id, @RequestBody Employee employee) {
-        return ResponseEntity.ok(clientService.saveEmployee(id,employee));
-    }
+  //  @PutMapping("/{id}")
+  //  public ResponseEntity<Client> saveEmployee(@PathVariable final Long id, @RequestBody Employee employee) {
+  //      return ResponseEntity.ok(clientService.saveEmployee(id,employee));
+  //  }
 
 
 }

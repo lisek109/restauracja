@@ -33,19 +33,11 @@ public class ClientService {
         return true;
     }
 
-    public Client saveRandomEmployee(Long id) {
-        Client client = clientRepo.getById(id);
-        Employee employee = employeeService.findEmployee();
-        client.setEmployee(employee);
-        employee.setClientNumber((short) (employee.getClientNumber() + 1));
-        return clientRepo.save(client);
-    }
-
-    public Client saveEmployee(Long clientID, Employee employee) {
-        Client client = clientRepo.getById(clientID);
-        client.setEmployee(employee);
-        clientRepo.save(client);
-        return client;
-    }
+  //  public Employee saveParticularClient(Long clientID, Employee employee) {
+  //      Client client = clientRepo.getById(clientID);
+  //      client.setEmployee(employee);
+  //      clientRepo.save(client);
+  //      return client;
+  //  }
 }
 

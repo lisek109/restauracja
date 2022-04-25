@@ -19,6 +19,9 @@ import java.util.Collections;
 @Entity(name = "users")
 public class User implements UserDetails {
 
+
+
+
     @Id
     private String userName;
 
