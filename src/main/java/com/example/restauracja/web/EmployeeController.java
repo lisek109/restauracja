@@ -4,6 +4,7 @@ import com.example.restauracja.entities.Employee;
 import com.example.restauracja.service.EmployeeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,10 +12,12 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/restaurant/employee")
+
 public class EmployeeController {
 
     private final EmployeeService employeeService;
 
+    @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping("/{id}")
     public ResponseEntity<Employee> getById(@PathVariable final Long id) {
         return ResponseEntity.ok(employeeService.findById(id));

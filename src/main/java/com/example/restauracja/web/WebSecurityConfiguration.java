@@ -36,30 +36,25 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .csrf().disable();
-
         http
-
                 .httpBasic()
-
                 .and()
-
                 .authorizeRequests().antMatchers("/restaurant/client/**").permitAll()
                 .antMatchers(HttpMethod.GET, "/restaurant/client/**").authenticated()
-                .antMatchers("/restaurant/employee/**")
-                .authenticated()
+                .antMatchers("/restaurant/employee/**").permitAll()
                 .and()
                 .formLogin()
                 .and()
                 .logout();
     }
 
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication()
-                .withUser("admin").password("test").roles("ADMIN")
-                .and()
-                .withUser("superadmin").password("test").roles("SUPERADMIN");
-    }
+ //   @Override
+ //   protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+ //       auth.inMemoryAuthentication()
+ //               .withUser("admin").password("test").roles("ADMIN")
+ //               .and()
+ //               .withUser("superadmin").password("test").roles("SUPERADMIN");
+ //   }
 
    // @Bean
    // public PasswordEncoder passwordEncoder() {

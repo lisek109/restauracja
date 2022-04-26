@@ -14,7 +14,6 @@ public class ClientService {
 
 
     private final ClientRepo clientRepo;
-    private final EmployeeService employeeService;
 
     public Client save(Client client) {
         return clientRepo.save(client);
