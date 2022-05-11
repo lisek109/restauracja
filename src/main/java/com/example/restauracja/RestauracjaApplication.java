@@ -9,6 +9,13 @@ public class RestauracjaApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(RestauracjaApplication.class, args);
+
+		System.out.println("test Gita");
+
 	}
-	}
+
+
+
+
+}
 
