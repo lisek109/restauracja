@@ -36,12 +36,12 @@ public class EmployeeService {
         employeeRepo.delete(findById(id));
         return true;
     }
-//
-    //  public Employee findEmployee() {
-    //      return employeeRepo.findFirstByPositionOrPositionAndClientNumberLessThanOrderByClientNumberAsc(
-    //              Position.BARTENDER.toString(), Position.WAITER.toString(), 3)
-    //              .orElseThrow(() -> new RuntimeException("There is no free employee right now"));
-    //  }
+
+    public Employee findEmployee() {
+        return employeeRepo.findFirstByPositionOrPositionAndClientNumberLessThanOrderByClientNumberAsc(
+                Position.BARTENDER.toString(), Position.WAITER.toString(), 3)
+                .orElseThrow(() -> new RuntimeException("There is no free employee right now"));
+    }
 
     public Employee saveClient(Long id) {
         Client client = clientService.findById(id);

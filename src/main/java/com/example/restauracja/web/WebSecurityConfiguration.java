@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -47,17 +46,4 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and()
                 .logout();
     }
-
- //   @Override
- //   protected void configure(AuthenticationManagerBuilder auth) throws Exception {
- //       auth.inMemoryAuthentication()
- //               .withUser("admin").password("test").roles("ADMIN")
- //               .and()
- //               .withUser("superadmin").password("test").roles("SUPERADMIN");
- //   }
-
-   // @Bean
-   // public PasswordEncoder passwordEncoder() {
-   //     return NoOpPasswordEncoder.getInstance();
-   // }
 }

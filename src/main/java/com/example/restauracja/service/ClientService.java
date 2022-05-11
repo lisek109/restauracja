@@ -31,12 +31,5 @@ public class ClientService {
         clientRepo.delete(findById(id));
         return true;
     }
-
-  //  public Employee saveParticularClient(Long clientID, Employee employee) {
-  //      Client client = clientRepo.getById(clientID);
-  //      client.setEmployee(employee);
-  //      clientRepo.save(client);
-  //      return client;
-  //  }
 }
 

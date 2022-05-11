@@ -2,7 +2,6 @@ package com.example.restauracja.web;
 
 
 import com.example.restauracja.entities.User;
-import com.example.restauracja.service.UserDetailService;
 import com.example.restauracja.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

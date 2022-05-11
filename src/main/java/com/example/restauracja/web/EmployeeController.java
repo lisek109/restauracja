@@ -24,12 +24,9 @@ public class EmployeeController {
     }
 
     @GetMapping
-    public List<Employee> getAll() {
-        return employeeService.findAll();
+    public ResponseEntity<List<Employee>> getAll() {
+        return ResponseEntity.ok(employeeService.findAll());
     }
-   // public ResponseEntity<List<Employee>> getAll() {
-   //     return ResponseEntity.ok(employeeService.findAll());
-   // }
 
     @PostMapping
     public ResponseEntity<Employee> save(@RequestBody final Employee employee) {
